@@ -1,0 +1,7 @@
+quarkus:
+  datasource:
+    db-kind: postgresql
+    username: admin
+    password: appu99vinod
+    jdbc:
+      url: jdbc:postgresql://localhost:6432/ecommerce
