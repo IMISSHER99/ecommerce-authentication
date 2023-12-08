@@ -1,5 +1,8 @@
 package org.acme.resource;
 
+import io.quarkus.security.Authenticated;
+import jakarta.annotation.security.PermitAll;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -20,11 +23,34 @@ public class UserResource {
     }
 
 
+    /**
+     * Register new User
+     * @param users User
+     * @return User
+     */
     @POST
     @Path("/register")
+    @PermitAll()
     @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response registerUser(@RequestBody Users users) {
         Users registeredUser = userService.registerUser(users);
         return Response.status(200).entity(registeredUser).build();
+    }
+
+
+    /**
+     * Authenticate User
+     * @param userDto User
+     * @return HttpStatus
+     */
+    @POST
+    @Path("/login")
+    @RolesAllowed("ADMIN")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response authenticateUser(@RequestBody UserDto userDto) {
+        userService.authenticateUser(userDto);
+        return Response.status(200).build();
     }
 }

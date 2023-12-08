@@ -19,6 +19,8 @@ dependencies {
     implementation 'io.quarkus:quarkus-hibernate-orm-panache'
     implementation "io.quarkus:quarkus-jdbc-postgresql"
     implementation 'org.projectlombok:lombok:1.18.30'
+//    implementation 'io.quarkus:quarkus-oidc:3.6.0'
+    implementation 'io.quarkus:quarkus-smallrye-jwt:3.6.0'
     implementation 'org.mindrot:jbcrypt:0.4'
     implementation 'io.quarkus:quarkus-resteasy-reactive-jackson'
 //    implementation 'io.quarkus:quarkus-smallrye-health'
@@ -27,7 +29,10 @@ dependencies {
     implementation 'io.quarkus:quarkus-hibernate-orm'
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
     testImplementation 'io.quarkus:quarkus-junit5'
+    testImplementation 'io.quarkus:quarkus-junit5-mockito:3.6.1'
+    testImplementation 'io.quarkus:quarkus-test-security'
     testImplementation 'io.rest-assured:rest-assured'
+    testImplementation 'org.mockito:mockito-inline:5.2.0'
 }
 
 group 'org.acme'

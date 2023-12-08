@@ -14,4 +14,12 @@ public final class EntityConstants {
     public static final String POSTAL_CODE = "postal_code";
     public static final String ROLE_NAME = "role_name";
     public static final String ROLE_ID = "role_id";
+    public static final String CLIENT_ID = "client_id";
+    public static final String CLIENT_NAME = "client_name";
+    public static final String CLIENT_SECRET = "client_secret";
+    public static final String REDIRECT_URIS = "redirect_uris";
+    public static final String GRANT_TYPES = "grant_types";
+    public static final String CLIENT_SCOPES = "client_scopes";
+    public static final String SCOPE_NAME = "scope_name";
+
 }

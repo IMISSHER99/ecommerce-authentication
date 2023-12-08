@@ -43,7 +43,7 @@ public class Users extends PanacheEntityBase {
     private Timestamp updatedAt = Timestamp.from(LocalDateTime.now().toInstant(ZoneOffset.UTC));
     @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
     private List<Address> addresses;
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "user_roles",
             joinColumns = @JoinColumn(name = EntityConstants.USER_ID),
